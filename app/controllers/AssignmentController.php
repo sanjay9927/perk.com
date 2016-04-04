@@ -1,8 +1,7 @@
 <?php
 
-define('UNVERIFIED',0);
-
 class AssignmentController extends BaseController {
+  
 
 	public function registration()
 	{
@@ -23,19 +22,27 @@ class AssignmentController extends BaseController {
                 'email' => 'required|email|max:255',
             )
         );
-
         if($validator->fails()){
         	$response_array = array('success' => false, 'error_code' => 201, 'message' => "Required fields can not be Empty.");
         }else{
           $user = User::where('email',$email)->first();
+          
           if($user == NULL){
           	$user = new User;
           	$user->first_name = $first_name;
           	$user->last_name = $last_name;
           	$user->email_status = UNVERIFIED;
           	$user->email = $email;
-          	$user->save();
-          	$response_array = array('success' => true, 'message' => "User has been registered successfully.");
+          	
+            $subject = "[Perk.com] Registration";
+            $message = "Hi,".$first_name." ".$last_name." Thank you for registering !!";
+          	
+          	if(send_email($email,$subject,$message)){
+          		$user->save();
+                $response_array = array('success' => true, 'message' => "User has been registered successfully.");
+          	}else{
+          		 $response_array = array('false' => true, 'message' => "Postmark Exception while sending Email");
+          		}
           }else{
           	$response_array = array('success' => false, 'error_code' => 202, 'message' => "Email already registered with us.");
           }
@@ -44,5 +51,7 @@ class AssignmentController extends BaseController {
         $response = Response::json($response_array, $response_code);
         return $response;
 	}
+
+	
 
 }

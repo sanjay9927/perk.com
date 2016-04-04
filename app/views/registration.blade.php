@@ -7,7 +7,7 @@
 <body>
 	<div class="header">
 		<div class="logo">
-			<a href=""><img src="https://cdn2.perk.com/assets/perk2k16/images/perk-logo.png" width="90px" width="52px" ></a>
+			<!--<a href=""><img src="https://cdn2.perk.com/assets/perk2k16/images/perk-logo.png" width="90px" width="52px" ></a>-->
 		</div>
 </div>
 <div class="main">
@@ -28,7 +28,7 @@
   </form>
 </div>
 </div>
-<div class="footer"><div class="copyright">Designed & Developed By <a href="">Sanjay Singh</a></div></div>
+<div class="footer"><div class="copyright">Designed & Developed By <a href=""></a></div></div>
 </body>
 <!-- Jquery 1.12.0 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>

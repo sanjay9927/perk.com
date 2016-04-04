@@ -108,7 +108,6 @@ return array(
 		'Illuminate\Hashing\HashServiceProvider',
 		'Illuminate\Html\HtmlServiceProvider',
 		'Illuminate\Log\LogServiceProvider',
-		'Illuminate\Mail\MailServiceProvider',
 		'Illuminate\Database\MigrationServiceProvider',
 		'Illuminate\Pagination\PaginationServiceProvider',
 		'Illuminate\Queue\QueueServiceProvider',
@@ -187,8 +186,12 @@ return array(
 		'Str'               => 'Illuminate\Support\Str',
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
-		'View'              => 'Illuminate\Support\Facades\View',
+		'View'              => 'Illuminate\Support\Facades\View'
+
 
 	),
+
+  "postmark_key" => 'bcaa4d98-c097-4390-a628-aec62160103d',
+  "from_email" => "test@perk.com"
 
 );
