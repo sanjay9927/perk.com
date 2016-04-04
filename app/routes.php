@@ -20,10 +20,11 @@ Route::get('/', function()
 ************************************|                Perk Assignments              |************************************
                                     |---------------------------------------------|                                  */
 
-Route::group(array('prefix' => 'perk'), function()
-{
+Route::group(array('prefix' => 'perk'), function(){
 
-Route::get('registrationForm', 'AssignmentController@registration');
+	Route::get('/registration', array('as' => 'registration', 'uses' => 'AssignmentController@registration'));
+
+	Route::post('/register', array('as' => 'register', 'uses' => 'AssignmentController@register'));
 
 });
 

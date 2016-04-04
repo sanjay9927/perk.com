@@ -13,20 +13,25 @@
 <div class="main">
 <div class="testbox">
   <h1>Registration</h1>
-  <form action="/">
-      <hr>
+  <form action="/"> <hr>
   <label id="icon" for="name"><i class="icon-user "></i></label>
-  <input type="text" name="fname" id="fname" placeholder="First Name" required/>
+  <input type="text" name="prefix_first_name" id="prefix_first_name" placeholder="First Name" required/>
+  
   <label id="icon" for="lname"><i class="icon-user"></i></label>
-  <input type="text" name="name" id="name" placeholder="Last Name" required/>
+  <input type="text" name="prefix_last_name" id="prefix_last_name" placeholder="Last Name" required/>
+
   <label id="icon" for="name"><i class="icon-envelope"></i></label>
-  <input type="text" name="name" id="name" placeholder="Email" required/>
+  <input type="text" name="prefix_email" id="prefix_email" placeholder="Email" required/>
    <p></p>
-   <a href="#" class="button">Register</a>
+   <a href="#" class="button" onclick="registerUser('{{route('register')}}')">Register</a>
    
   </form>
 </div>
 </div>
 <div class="footer"><div class="copyright">Designed & Developed By <a href="">Sanjay Singh</a></div></div>
 </body>
+<!-- Jquery 1.12.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<!-- custom Js -->
+<script src="../js/scripts.js"></script>
 </html>
