@@ -2,6 +2,8 @@
 // User registration 
 
 function registerUser(path){
+  $("#loading_img").show();
+  $("#message").html("");
   $.ajax({
           type: "post",
           url: path,
@@ -13,10 +15,15 @@ function registerUser(path){
           },
           contentType: "application/x-www-form-urlencoded",
           success: function(responseData, textStatus, jqXHR) {
-              alert(responseData.message);
+             setTimeout(function(){
+              $("#loading_img").hide();
+              $("#message").html(responseData.message);
+             },1000);
           },
           error: function(jqXHR, textStatus, errorThrown) {
               console.log(errorThrown);
+
           }
       })
+  return false;
 }

@@ -66,7 +66,9 @@ html{
   font-style: italic;
 }
 .text-red{
-  color:red;
+  color: #B94F4F;
+  margin-left: 18px;
+  font-size: 13px;
 }
 
 
@@ -141,7 +143,7 @@ hr{
   opacity: 0.3;
 }
 
-input[type=text],input[type=password]{
+input[type=text],input[type=password],input[type=email]{
   width: 200px; 
   height: 39px; 
   -webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
@@ -155,6 +157,7 @@ input[type=text],input[type=password]{
   margin-left: -5px;
   margin-top: 13px; 
   padding-left: 10px;
+
 }
 
 input[type=password]{
@@ -187,26 +190,37 @@ input[type=password]{
   margin-top: 20px;
 }
 
-a.button {
+.loading_img{
+  float: right;
+  margin-right: 10px;
+  width: 33px;
+  margin-top: 14px;
+  display: none;
+}
+
+.button {
   font-size: 14px;
   font-weight: 600;
   color: white;
-  padding: 6px 25px 0px 20px;
+  padding: 8px 20px;
   margin: 10px 8px 20px 0px;
   display: inline-block;
-  float: right;
   text-decoration: none;
-  width: 50px; height: 27px; 
   -webkit-border-radius: 5px; 
   -moz-border-radius: 5px; 
   border-radius: 5px; 
   background-color: #3a57af; 
-  -webkit-box-shadow: 0 3px rgba(58,87,175,.75); 
-  -moz-box-shadow: 0 3px rgba(58,87,175,.75); 
-  box-shadow: 0 3px rgba(58,87,175,.75);
   transition: all 0.1s linear 0s; 
-  top: 0px;
-  position: relative;
+  float: right;
+  margin-right: 23px;
+  
+}
+.message{
+    font-size: 13px;
+    display: inline-block;
+    margin-left: 18px;
+    padding: 10px 0px;
+    color: #C56172;
 }
 
 a.button:hover {

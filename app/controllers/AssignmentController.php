@@ -23,10 +23,9 @@ class AssignmentController extends BaseController {
             )
         );
         if($validator->fails()){
-        	$response_array = array('success' => false, 'error_code' => 201, 'message' => "Required fields can not be Empty.");
+          $response_array = array('success' => false, 'error_code' => 201, 'message' => get_error(201));
         }else{
           $user = User::where('email',$email)->first();
-          
           if($user == NULL){
           	$user = new User;
           	$user->first_name = $first_name;
@@ -38,13 +37,13 @@ class AssignmentController extends BaseController {
             $message = "Hi,".$first_name." ".$last_name." Thank you for registering !!";
           	
           	if(send_email($email,$subject,$message)){
-          		$user->save();
-                $response_array = array('success' => true, 'message' => "User has been registered successfully.");
+          		  $user->save();
+                $response_array = array('success' => true, 'message' => get_error(202));
           	}else{
-          		 $response_array = array('false' => true, 'message' => "Postmark Exception while sending Email");
+          		 $response_array = array('false' => false, 'error_code' => 203, 'message' => get_error(203));
           		}
           }else{
-          	$response_array = array('success' => false, 'error_code' => 202, 'message' => "Email already registered with us.");
+          	$response_array = array('success' => false, 'error_code' => 204, 'message' => get_error(204));
           }
         }
         $response_code = 200;

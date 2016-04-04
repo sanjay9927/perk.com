@@ -7,13 +7,13 @@
 <body>
 	<div class="header">
 		<div class="logo">
-			<!--<a href=""><img src="https://cdn2.perk.com/assets/perk2k16/images/perk-logo.png" width="90px" width="52px" ></a>-->
+			<a href=""><img src="https://cdn2.perk.com/assets/perk2k16/images/perk-logo.png" width="90px" width="52px" ></a>
 		</div>
 </div>
 <div class="main">
 <div class="testbox">
   <h1>Registration</h1>
-  <form action="/"> <hr>
+  <form action="/" onsubmit="return registerUser('{{route('register')}}')"> <hr>
   <label id="icon" for="name"><i class="icon-user "></i></label>
   <input type="text" name="prefix_first_name" id="prefix_first_name" placeholder="First Name" required/>
   
@@ -21,17 +21,18 @@
   <input type="text" name="prefix_last_name" id="prefix_last_name" placeholder="Last Name" required/>
 
   <label id="icon" for="name"><i class="icon-envelope"></i></label>
-  <input type="text" name="prefix_email" id="prefix_email" placeholder="Email" required/>
-   <p></p>
-   <a href="#" class="button" onclick="registerUser('{{route('register')}}')">Register</a>
+  <input type="email" name="prefix_email" id="prefix_email" placeholder="Email" required/>
+   <span id="message" class="message"></span>
+   <button class="button"> Register</button>
+   <img class="loading_img" id="loading_img" src ="http://loadinggif.com/images/image-selection/27.gif">
    
   </form>
 </div>
 </div>
-<div class="footer"><div class="copyright">Designed & Developed By <a href=""></a></div></div>
+<div class="footer"><div class="copyright">Designed & Developed By <a href="">Sanjay Singh</a></div></div>
 </body>
 <!-- Jquery 1.12.0 -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" ></script>
 <!-- custom Js -->
 <script src="../js/scripts.js"></script>
 </html>

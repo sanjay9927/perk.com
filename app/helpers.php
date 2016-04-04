@@ -21,4 +21,29 @@ function send_email($to_email,$subject,$message) {
 	    return false;
 	}
 }
+function get_error($error_code)
+{
+    if(is_array($error_code)){
+        return implode( ' ', $error_code);
+    }
+
+    switch($error_code) {
+        case 201:
+            $error_message = "Required field can not be empty.";
+            break;
+        case 202:
+            $error_message = "You are registered successfully.";
+            break;
+        case 203:
+            $error_message = "Postmark Exception while sending Email.";
+            break;
+        case 204:
+            $error_message = "Email already registered with us.";
+            break;
+        default:
+            $error_message = "Unknown error occurred.";
+    }
+    return $error_message;
+}
+
 ?>
