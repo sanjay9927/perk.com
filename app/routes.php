@@ -15,3 +15,16 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+/*                                  |---------------------------------------------|
+************************************|                Perk Assignments              |************************************
+                                    |---------------------------------------------|                                  */
+
+Route::group(array('prefix' => 'perk'), function()
+{
+
+Route::get('registrationForm', 'AssignmentController@registration');
+
+});
+
+/*----------------------------------------------->END of USER APIs<--------------------------------------------------*/
